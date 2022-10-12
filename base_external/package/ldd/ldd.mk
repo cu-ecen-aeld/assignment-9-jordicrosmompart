@@ -6,7 +6,7 @@
 ##############################################################
 $(eval $(kernel-module))
 #TODO: Fill up the contents below in order to reference your assignment 7 git contents
-LDD_VERSION = 'aa0f50ab378640b7ba45b36c5ef7e35b3d720338'
+LDD_VERSION = '82f0f495542f18ca50cb6621b1f45ee9cf74ebe3'
 # Note: Be sure to reference the *ssh* repository URL here (not https) to work properly
 # with ssh keys and the automated build/test system.
 # Your site should start with git@github.com:

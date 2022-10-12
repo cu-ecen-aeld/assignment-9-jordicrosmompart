@@ -125,6 +125,8 @@ then
     echo "Removing LDD modules"
 
 	# Invoke rmmod with all arguments we got
+	module_scull="scull"
+	device_scull="scull"
 	rmmod $module_scull || exit 1
 	# Remove stale nodes
 	rm -f /dev/${device_scull}[0-3]
@@ -135,11 +137,15 @@ then
 	rm -f /dev/${device_scull}priv
 	
 	# Invoke rmmod with all arguments we got
+	module_faulty="faulty"
+	device_faulty="faulty"
 	rmmod $module_faulty || exit 1
 	# Remove stale nodes
 	rm -f /dev/${device_faulty}
 
 	# Invoke rmmod with all arguments we got
+	module_hello="hello"
+	device_hello="hello"
 	rmmod $module_hello || exit 1
 	# Remove stale nodes
 	rm -f /dev/${device_hello}
