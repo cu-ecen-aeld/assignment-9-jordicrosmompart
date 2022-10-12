@@ -13,8 +13,8 @@ LDD_VERSION = '81889f79afc53d46559b926330853460ea397c49'
 LDD_SITE = 'git@github.com:cu-ecen-aeld/assignment-7-jordicrosmompart.git'
 LDD_SITE_METHOD = git
 LDD_GIT_SUBMODULES = YES
-LDD_MODULE_SUBDIRS += $(@D)/misc-modules/
-LDD_MODULE_SUBDIRS += $(@D)/scull/
+LDD_MODULE_SUBDIRS += misc-modules
+LDD_MODULE_SUBDIRS += scull
 
 define LDD_CMDS
 	$(MAKE)
@@ -22,9 +22,10 @@ endef
 
 #Add writer, finder and finder-test utilities/scripts to the installation steps below
 define LDD_INSTALL_TARGET_CMDS
-	$(INSTALL) -d 0755 $(TARGET_DIR)/lib/modules/
-	$(INSTALL) -m 0755 $(@D)/misc-modules/hello.ko $(TARGET_DIR)/lib/modules/hello.ko
-	$(INSTALL) -m 0755 $(@D)/scull/scull.ko $(TARGET_DIR)/lib/modules/scull.ko
+	$(INSTALL) -d 0755 $(TARGET_DIR)/lib/modules/5.15.18/extra/
+	$(INSTALL) -m 0755 $(@D)/misc-modules/hello.ko $(TARGET_DIR)/lib/modules/5.15.18/extra/hello.ko
+	$(INSTALL) -m 0755 $(@D)/misc-modules/faulty.ko $(TARGET_DIR)/lib/modules/5.15.18/extra/faulty.ko
+	$(INSTALL) -m 0755 $(@D)/scull/scull.ko $(TARGET_DIR)/lib/modules/5.15.18/extra/scull.ko
 
 endef
 
